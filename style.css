@@ -1,0 +1,107 @@
+body {
+	margin: 0;
+}
+#sun {
+	position: absolute;
+	top: 5%;
+	left: 2%;
+	background-color: yellow;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	z-index: 2;
+	transition: background-color 1s ease-in-out;
+}
+#sky {
+	position: absolute;
+	inset: 0;
+	background-color: lightskyblue;
+	z-index: 1;
+	transition: background-color 2s ease-in-out;
+}
+#ground {
+	display: block;
+	position: absolute;
+	background-color: lightgreen;
+	bottom: 0;
+	width: 100%;
+	height: 40%;
+	z-index: 2;
+	transition: background-color 2s ease-in-out;
+}
+
+.star {
+	background-color: yellow;
+	width: 10px;
+	height: 10px;
+	transform: rotate(45deg);
+	position: absolute;
+	z-index: 3;
+	opacity: 0;
+	transition: opacity 2s;
+}
+#star1 {
+	inset: 100px 20%;
+	animation-delay: 0.5s;
+}
+#star2 {
+	inset: 250px 25%;
+	animation-delay: 0.2s;
+}
+#star3 {
+	inset: 80px 35%;
+	animation-delay: 0.5s;
+}
+#star4 {
+	inset: 290px 40%;
+	animation-delay: 0.9s;
+}
+#star5 {
+	inset: 90px 50%;
+	animation-delay: 0.6s;
+}
+#star6 {
+	inset: 305px 60%;
+	animation-delay: 0.5s;
+}
+#star7 {
+	inset: 85px 70%;
+	animation-delay: 0.8s;
+}
+#star8 {
+	inset: 280px 80%;
+	animation-delay: 0.2s;
+}
+#star9 {
+	inset: 100px 90%;
+	animation-delay: 0.6s;
+}
+
+#sun:hover {
+	background-color: grey;
+}
+#sun:hover + #sky {
+	background-color: black;
+	transition-duration: 0.5s;
+}
+#sun:hover + #sky + #ground {
+	background-color: green;
+	transition-duration: 0.5s;
+}
+#sun:hover + #sky > .star {
+	animation-name: twinkle;
+	animation-iteration-count: infinite;
+	animation-duration: 0.5s;
+}
+
+@keyframes twinkle {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
